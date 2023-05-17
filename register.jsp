@@ -25,7 +25,7 @@
         if (rows > 0) {
             // Registration successful, redirect to login page
             out.println("<script>alert('Registration successful');</script>");
-            out.println("<script>window.location.href='login.html';</script>");
+            out.println("<script>window.location.href='index.html';</script>");
         } else {
             // Registration failed, show error message
             out.println("<script>alert('Registration failed');</script>");
