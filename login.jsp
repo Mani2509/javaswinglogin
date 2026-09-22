@@ -17,6 +17,7 @@
         
         if (rs.next()) {
             // Login successful, redirect to home page or dashboard
+            session.setAttribute("username", username);
             response.sendRedirect("home.jsp");
         } else {
             // Login failed, show error message
@@ -25,6 +26,8 @@
         }
     } catch (ClassNotFoundException | SQLException ex) {
         ex.printStackTrace();
+        out.println("<script>alert('Something went wrong. Please try again.');</script>");
+        out.println("<script>window.location.href='index.html';</script>");
     } finally {
         try {
             if (rs != null) rs.close();
