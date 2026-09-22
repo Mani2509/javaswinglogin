@@ -21,10 +21,18 @@
         } else {
             // Login failed, show error message
             out.println("<script>alert('Invalid username or password');</script>");
-            out.println("<script>window.location.href='login.html';</script>");
+            out.println("<script>window.location.href='index.html';</script>");
         }
     } catch (ClassNotFoundException | SQLException ex) {
         ex.printStackTrace();
     } finally {
         try {
-            if (rs != null) rs.close
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+            } 
+        catch (SQLException ex) {
+            ex.printStackTrace();
+            }
+}
+%>
