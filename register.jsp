@@ -4,7 +4,7 @@
     String password = request.getParameter("password");
     String confirmPassword = request.getParameter("confirmPassword");
     
-    if (!password.equals(confirmPassword)) {
+    if (password == null || !password.equals(confirmPassword)) {
         // Passwords don't match, show error message
         out.println("<script>alert('Passwords don\\'t match');</script>");
         out.println("<script>window.location.href='registration.html';</script>");
